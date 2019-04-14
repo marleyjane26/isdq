@@ -1,7 +1,9 @@
 package com.example.hp.isd;
 
+import android.content.Intent;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
+import android.view.View;
 import android.widget.Button;
 import android.widget.EditText;
 
@@ -13,7 +15,7 @@ import com.google.firebase.auth.FirebaseUser;
 public class MainActivity extends AppCompatActivity {
     private FirebaseAuth mAuth;
     Button btnSignIN;
-    EditText edtEmail,edtPass;
+    EditText edtEmail, edtPass;
 
 
     @Override
@@ -22,11 +24,14 @@ public class MainActivity extends AppCompatActivity {
         setContentView(R.layout.activity_main);
 
         mAuth = FirebaseAuth.getInstance();
-        btnSignIN=(Button) findViewById(R.id.btn_login);
-        edtEmail=(EditText) findViewById(R.id.input_email);
-        edtPass=(EditText) findViewById(R.id.input_password);
-       FirebaseAuth.AuthStateListener mAuthListner;
+        btnSignIN = (Button) findViewById(R.id.btn_login);
+        edtEmail = (EditText) findViewById(R.id.input_email);
+        edtPass = (EditText) findViewById(R.id.input_password);
+        FirebaseAuth.AuthStateListener mAuthListner;
+
+
     }
+
     @Override
     public void onStart() {
         super.onStart();
@@ -34,5 +39,11 @@ public class MainActivity extends AppCompatActivity {
         FirebaseUser currentUser = mAuth.getCurrentUser();
 
     }
+ public void login(View view){
+     Intent my_intent= new Intent(MainActivity.this,homePage.class);
+     startActivity(my_intent);
+
+ }
+
 
 }
