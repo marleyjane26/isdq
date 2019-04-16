@@ -21,8 +21,23 @@ public class payment  {
         }
 
 
+    public void setClient_id(int client_id) {
+        this.client_id = client_id;
+    }
 
+    public void setBalance(double balance) {
+        this.balance = balance;
+    }
 
+    public void setPayment_state(int payment_state) {
+        this.payment_state = payment_state;
+    }
 
+    public void setIssued_date(String issued_date) {
+        this.issued_date = issued_date;
+    }
 
+    public void setPayed_date(String payed_date) {
+        this.payed_date = payed_date;
+    }
 }
